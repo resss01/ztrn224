@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset='UTF-8><title>Данные</title></head>
+<body>
+    <h2>Сохраненные данные:</h2>
+    {% for submission in submissions %}
+        <pre>{{ submission.data }}</pre>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Форма</title>
+    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+</head>
+<bodu>
+    <h1>Форма с динамическими полями</h1>
+    <form method='post'>
+        {% csrf_token %}
+        <div id='inputs'>
+            <input type='text' name='name0' placeholder='Введите значение'><br>
+        </div>
+        <button type='button' id='add'>Добавить поле</button>
+        <button type='submit'>Сохранить</button>
+    </form>
+    
+    <script>
+        let counter = 1;
+        $('#add').click(function () {
+            $('#inputs').append(`<input type='text' name='name${counter}'placeholder='Введите значение ${counter}'><br>`);
+            counter++;
+        });
+    </script>
+</body>
+</html>
+
